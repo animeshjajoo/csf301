@@ -1,4 +1,4 @@
-# AR(1) and MA(1) Model Training and Prediction
+# ARIMA Model Training and Prediction
 
 This repository contains Haskell code for training AR(1) and MA(1) models and making predictions on time series data in CSV format.
 
