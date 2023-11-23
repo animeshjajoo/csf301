@@ -11,6 +11,11 @@ The code provides functionalities to:
 - Train an MA(1) model using initial values and a given parameter (theta).
 - Calculate accuracy between predicted and actual values.
 
+## Software Architecture
+- We have used Haskell to write our code from scratch without the use of libraries.
+- The python file is reused using common known libraries.
+- The CSV file used was downloaded locally though we can use online csv files from Yahoo or some other source.
+
 ## How Haskell is Ideal for this Use Case
 
 ### Functional Purity
@@ -48,6 +53,11 @@ Haskell uses lazy evaluation, meaning that computations are only performed when 
 ### Pattern Matching: 
 Pattern matching is used in the definition of 'splitBy' to handle different cases based on the input.
 
+### Exception Handling with Control.Exception:
+Exception handling is implemented using the Control.Exception module to catch and handle specific exceptions, such as IOException during file I/O operations.
+
+### Either Monad Usage:
+The code utilizes the Either monad to handle errors, allowing explicit representation of success or failure in the result types.
 
 ## Usage
 
