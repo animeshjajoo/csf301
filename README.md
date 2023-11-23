@@ -30,10 +30,10 @@ Haskell's lazy evaluation strategy allows for efficient handling of potentially 
 
 ## What Haskell aspects we used?
 
-###Monads: 
+### Monads: 
 The IO monad is used extensively for handling file I/O operations and introducing delays.
 
-###List Manipulation: 
+### List Manipulation: 
 Various list manipulation functions such as map, zipWith, sum, length, maximum, and list comprehensions.
 
 ### Concurrency: 
