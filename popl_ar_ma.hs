@@ -3,6 +3,9 @@ import System.IO
 
 import Control.Concurrent (threadDelay)
 
+import Graphics.Rendering.Chart.Easy
+import Graphics.Rendering.Chart.Backend.Cairo
+
 -- Function to split a string by a delimiter
 splitBy :: Char -> String -> [String]
 splitBy delimiter str = splitBy' delimiter str []
@@ -47,12 +50,32 @@ trainMA1Model (x:xs) theta =
     let prediction = theta * 0.5 + x * 0.5
     in prediction : trainMA1Model xs theta
 
+-- Function to handle file reading errors
+handleFileReadError :: SomeException -> IO [[String]]
+handleFileReadError ex = do
+    putStrLn $ "Error reading file: " ++ show ex
+    return []
+
+-- Function to handle CSV parsing errors
+handleCSVError :: SomeException -> IO [[String]]
+handleCSVError ex = do
+    putStrLn $ "Error parsing CSV: " ++ show ex
+    return []
+
+-- Function to handle training errors
+handleTrainingError :: SomeException -> IO [Double]
+handleTrainingError ex = do
+    putStrLn $ "Error training model: " ++ show ex
+    return []
+
 
 main :: IO ()
 main = do
     
     startRead <- getCurrentTime
-    csvData <- readCSVFile "data1.csv"
+    csvData <- handle handleFileReadError $ do
+        contents <- readFile "data1.csv"
+        handle handleCSVError $ return $ map (splitBy ',') (lines contents)
     endRead <- getCurrentTime
 
     let columnToExtractInitial = 0  -- Column index (0-based) for initial values
@@ -66,13 +89,16 @@ main = do
             [] -> []  
             _ -> extractColumn columnToExtractActual csvData
 
-    startTraining <- getCurrentTime
     let phi = 0.7  -- AR(1) parameter
-    threadDelay 1000000 
-
-    -- Train the AR(1) model 
-    let predictions = trainAR1Model initialValues phi
-    endTraining <- getCurrentTime
+    predictionsAR1 <- handle handleTrainingError $ do
+        startTrainingAR1 <- getCurrentTime
+        threadDelay 1000000
+        let predictions = trainAR1Model initialValues phi
+        endTrainingAR1 <- getCurrentTime
+        let processingTimeTrainingAR1 = realToFrac (diffUTCTime endTrainingAR1 startTrainingAR1) :: Float
+        let adjustedProcessingTimeTrainingAR1 = processingTimeTrainingAR1 - 1.0
+        putStrLn $ "Performance (AR(1) model training and prediction): " ++ show adjustedProcessingTimeTrainingAR1
+        return predictions
 
     -- Calculate processing times
     let processingTimeRead = diffUTCTime endRead startRead
@@ -91,15 +117,15 @@ main = do
 
     start <- getCurrentTime
     let theta = 0.7  -- MA(1) parameter
-    threadDelay 1000000 
+    predictionsMA1 <- handle handleTrainingError $ do
+        startTrainingMA1 <- getCurrentTime
+        threadDelay 1000000
+        let predictions = trainMA1Model initialValues theta
+        endTrainingMA1 <- getCurrentTime
+        let processingTimeTrainingMA1 = realToFrac (diffUTCTime endTrainingMA1 startTrainingMA1) :: Float
+        let adjustedProcessingTimeTrainingMA1 = processingTimeTrainingMA1 - 1.0
+        putStrLn $ "Performance (MA(1) model training and prediction): " ++ show adjustedProcessingTimeTrainingMA1
 
-    -- Train the MA(1) model 
-    let predictions = trainMA1Model initialValues theta
-    end <- getCurrentTime
-
-    -- let processingTime = diffUTCTime end start
-
-    putStrLn "Predicted values using MA(1) model:"
     print predictions
 
     let processingTimeTraining = realToFrac (diffUTCTime endTraining startTraining) :: Float
@@ -109,3 +135,21 @@ main = do
 
     let accuracy = calculateAccuracy predictions actualValues
     putStrLn $ "Accuracy of predictions: " ++ show accuracy
+
+    -- Time Series Plot
+    let timePoints = [1..length actualValues]
+    toFile def "time_series_plot.png" $ do
+        layout_title .= "Actual vs Predicted Values"
+        plot (line "Actual" [zip timePoints actualValues])
+        plot (line "AR(1) Predicted" [zip timePoints predictionsAR1])
+        plot (line "MA(1) Predicted" [zip timePoints predictionsMA1])
+ 
+    -- Performance Metrics Plot
+    toFile def "performance_metrics_plot.png" $ do
+        layout_title .= "Performance Metrics"
+        plot (bars "Processing Time" [ (1, processingTimeRead), (2, adjustedProcessingTimeTraining) ])
+ 
+    -- Accuracy Comparison Plot
+    toFile def "accuracy_comparison_plot.png" $ do
+        layout_title .= "Accuracy of Predictions"
+        plot (bars "Accuracy" [ (1, accuracyAR1), (2, accuracyMA1) ])
