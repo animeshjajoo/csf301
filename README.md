@@ -95,7 +95,7 @@ Enhancing ARIMA models in Haskell to incorporate external factors such as econom
 Finance: Improved stock market prediction by considering economic indicators, news sentiment analysis, or geopolitical events alongside historical stock data.
 Epidemiology: Better forecasting of disease outbreaks by integrating health-related data like vaccination rates, climate conditions, or population movements into the model.
 Enhanced Seasonal Modeling:
-Advancing ARIMA models in Haskell to better capture and forecast seasonal variations in time series data. This improvement could benefit industries such as:
+Advancing ARIMA models in Haskell to better capture and forecast seasonal variations in time series data.
 
 ## Real World Applications
 
