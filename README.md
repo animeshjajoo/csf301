@@ -5,6 +5,7 @@
 | Soumil Ghosh     | 2020B1A72102G |
 | Gaurang Aswal    | 2020B1A71960G |
 # ARIMA Model Training and Prediction
+## Group 56
 
 This repository contains Haskell code for training AR(1) and MA(1) models and making predictions on time series data in CSV format.
 
@@ -99,6 +100,8 @@ Advancing ARIMA models in Haskell to better capture and forecast seasonal variat
 ## Real World Applications
 
 Haskell's adeptness in mathematical computations and its capacity to handle quantitative algorithms suggest that financial institutions like Jane Street or Goldman Sachs have in-house tools developed in Haskell for time series analysis, encompassing models like ARIMA. Haskell's functional design and strong mathematical underpinnings are well-aligned with the demands of quantitative finance, positioning it as a viable choice for implementing sophisticated forecasting models such as ARIMA within these organizations. Nevertheless, detailed insights into their internal methodologies and tools remain closely guarded proprietary information.
+
+Haskell's adoption in blockchain technology, notably seen in projects like Cardano, showcases its prowess in building robust, secure, and mathematically precise blockchain solutions. Its strong type system and reliability make it apt for smart contract development, formal verification, and research within the blockchain sphere. Haskell's role in enhancing security, reducing vulnerabilities, and fostering innovation underscores its significance in shaping the future of blockchain technology.
 
 ## Acknowledgments
 
