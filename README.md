@@ -30,17 +30,23 @@ Haskell's lazy evaluation strategy allows for efficient handling of potentially 
 
 ## What Haskell aspects we used?
 
-### Monads: The IO monad is used extensively for handling file I/O operations and introducing delays.
+###Monads: 
+The IO monad is used extensively for handling file I/O operations and introducing delays.
 
-### List Manipulation: Various list manipulation functions such as map, zipWith, sum, length, maximum, and list comprehensions.
+###List Manipulation: 
+Various list manipulation functions such as map, zipWith, sum, length, maximum, and list comprehensions.
 
-### Concurrency: 'threadDelay': Function for introducing a delay in the program, used here for simulating a time-consuming process.
+### Concurrency: 
+'threadDelay': Function for introducing a delay in the program, used here for simulating a time-consuming process.
 
-### File I/O: 'openFile', 'hGetContents', and 'hClose': Functions for opening a file, reading its contents, and closing the file handle, respectively.
+### File I/O: 
+'openFile', 'hGetContents', and 'hClose': Functions for opening a file, reading its contents, and closing the file handle, respectively.
 
-### Lazy Evaluation: Haskell uses lazy evaluation, meaning that computations are only performed when the result is actually needed. The 'accuracy' value is computed when it is printed.
+### Lazy Evaluation: 
+Haskell uses lazy evaluation, meaning that computations are only performed when the result is actually needed. The 'accuracy' value is computed when it is printed.
 
-### Pattern Matching: Pattern matching is used in the definition of 'splitBy' to handle different cases based on the input.
+### Pattern Matching: 
+Pattern matching is used in the definition of 'splitBy' to handle different cases based on the input.
 
 
 ## Usage
