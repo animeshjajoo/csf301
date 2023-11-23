@@ -4,7 +4,7 @@
 | Name             | Campus ID     |
 |------------------|---------------|
 | Animesh Jajoo    | 2020B3A71260G |
-| Pratik Lahiri    | 2020B3A71260G |
+| Pratik Lahiri    | 2020B3A71165G |
 | Soumil Ghosh     | 2020B1A72102G |
 | Gaurang Aswal    | 2020B1A71960G |
 
