@@ -2,6 +2,10 @@
 
 This repository contains Haskell code for training AR(1) and MA(1) models and making predictions on time series data in CSV format.
 
+Haskell's strength in implementing ARIMA models stems from its functional nature, which aligns closely with the mathematical concepts behind time series analysis. With immutability, purity, and a strong type system, Haskell ensures precise and reliable data manipulation essential for ARIMA modeling. Its support for function composition and libraries for numerical computations further enhances the implementation process, allowing for efficient handling of time series data and calculations within the model.
+
+In a recent comparison between Python and Haskell implementations of an ARIMA model for time series forecasting, the Haskell version outperformed Python, yielding notably superior results. Despite Python's popularity in data analysis and its rich ecosystem of libraries, Haskell's functional paradigm and strong type system seemed to provide an edge in this specific scenario. The precise handling of data transformations and computations in Haskell contributed to more accurate predictions, showcasing the language's prowess in modeling time series data. The outcome underscores how Haskell's mathematical foundations and inherent reliability can sometimes offer a performance advantage over widely used data analysis tools like Python in specific modeling contexts.
+
 ## Overview
 
 The code provides functionalities to:
