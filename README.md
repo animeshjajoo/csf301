@@ -68,6 +68,26 @@ Pattern matching is used in the definition of 'splitBy' to handle different case
 
 The code reports performance metrics for reading CSV files and training/predicting using AR(1) and MA(1) models. Adjustments may be needed based on the dataset size and computational resources.
 
+## Future Scopes
+
+The focused future scopes for ARIMA models in Haskell and their potential real-world applications:
+
+### Incorporating Exogenous Variables:
+Enhancing ARIMA models in Haskell to incorporate external factors such as economic indicators, weather patterns, or social trends as exogenous variables (ARIMAX models). This advancement could find applications in:
+
+### Finance: Improved stock market prediction by considering economic indicators, news sentiment analysis, or geopolitical events alongside historical stock data.
+### Epidemiology: Better forecasting of disease outbreaks by integrating health-related data like vaccination rates, climate conditions, or population movements into the model.
+Enhanced Seasonal Modeling:
+Advancing ARIMA models in Haskell to better capture and forecast seasonal variations in time series data. This improvement could benefit industries such as:
+
+### Retail: More accurate sales forecasting by accounting for seasonal shopping patterns, holidays, or promotional periods.
+Energy: Improved demand prediction by considering seasonal changes in energy consumption, weather variations, or renewable energy production patterns.
+Real-Time Forecasting and Anomaly Detection:
+Developing ARIMA models in Haskell capable of real-time forecasting and anomaly detection in dynamic environments. This enhancement could be applied in:
+
+### Cybersecurity: Timely identification of anomalies in network traffic, aiding in the detection of cyber threats or suspicious activities.
+### Manufacturing: Predictive maintenance by forecasting equipment performance in real-time, allowing early detection of faults or failures in machinery.
+
 ## Acknowledgments
 
 The code snippets and functionalities are adapted and extended from various numerical analysis libraries and research in time series analysis.
