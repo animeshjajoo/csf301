@@ -80,13 +80,9 @@ Epidemiology: Better forecasting of disease outbreaks by integrating health-rela
 Enhanced Seasonal Modeling:
 Advancing ARIMA models in Haskell to better capture and forecast seasonal variations in time series data. This improvement could benefit industries such as:
 
-Retail: More accurate sales forecasting by accounting for seasonal shopping patterns, holidays, or promotional periods.
-Energy: Improved demand prediction by considering seasonal changes in energy consumption, weather variations, or renewable energy production patterns.
-Real-Time Forecasting and Anomaly Detection:
-Developing ARIMA models in Haskell capable of real-time forecasting and anomaly detection in dynamic environments. This enhancement could be applied in:
+## Real World Applications
 
-Cybersecurity: Timely identification of anomalies in network traffic, aiding in the detection of cyber threats or suspicious activities.
-Manufacturing: Predictive maintenance by forecasting equipment performance in real-time, allowing early detection of faults or failures in machinery.
+Haskell's adeptness in mathematical computations and its capacity to handle quantitative algorithms suggest that financial institutions like Jane Street or Goldman Sachs might consider exploring or potentially have in-house tools developed in Haskell for time series analysis, encompassing models like ARIMA. Haskell's functional design and strong mathematical underpinnings are well-aligned with the demands of quantitative finance, positioning it as a viable choice for implementing sophisticated forecasting models such as ARIMA within these organizations. Nevertheless, detailed insights into their internal methodologies and tools remain closely guarded proprietary information.
 
 ## Acknowledgments
 
