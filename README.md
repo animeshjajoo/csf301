@@ -19,11 +19,14 @@ Haskell's functional purity helps ensure side-effect-free functions, enhancing p
 ### Type Safety
 Strong static typing in Haskell minimizes runtime errors, aiding in catching potential bugs during development, crucial for numerical algorithms' accuracy.
 
-### Immutability
-Immutable data structures in Haskell prevent accidental changes, ensuring stability in complex calculations.
+### Immutability and Referential Transparency
+Immutability in Haskell ensures that once data is created, it cannot be changed. This property is beneficial for maintaining the integrity of time series data and preventing unintended side effects during model training. Referential transparency aids in reasoning about the behavior of functions, enhancing predictability in computations.
 
 ### Concurrency Control
 Haskell's concurrency control mechanisms enable efficient handling of computational tasks, beneficial for parallelizing and optimizing numerical computations.
+
+### Lazy Evaluation
+Haskell's lazy evaluation strategy allows for efficient handling of potentially infinite data structures. In time series analysis, where data streams can be continuous or very large, lazy evaluation can lead to more efficient resource utilization.
 
 ## Usage
 
