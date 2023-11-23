@@ -1,3 +1,9 @@
+| Name             | Campus ID     |
+|------------------|---------------|
+| Animesh Jajoo    | 2020B3A71260G |
+| Pratik Lahiri    | 2020B3A71260G |
+| Soumil Ghosh     | 2020B1A72102G |
+| Gaurang Aswal    | 2020B1A71960G |
 # ARIMA Model Training and Prediction
 
 This repository contains Haskell code for training AR(1) and MA(1) models and making predictions on time series data in CSV format.
